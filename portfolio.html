@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1C2A26;
+            color: #F4F4F4;
+            scroll-behavior: smooth;
+        }
+
+        .header {
+            background-color: #2E3B3D;
+            padding: 20px 0;
+        }
+
+        .navbar {
+            text-align: center;
+        }
+
+        .navbar h2 {
+            color: #F4C274;
+            margin: 0;
+        }
+
+        .navbar-nav .nav-link {
+            color: #F4C274;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FF6C37;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #F4C274;
+            margin: 40px 0 20px;
+        }
+
+        .project-card {
+            background-color: #2A2E2D;
+            border-radius: 10px;
+            margin: 15px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: #F4C274;
+            font-size: 1.5rem;
+        }
+
+        .project-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .project-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .project-content h5 {
+            color: #FF6C37;
+            margin: 10px 0;
+        }
+
+        .project-content p {
+            color: #CFCFCF;
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: #2E3B3D;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #F4C274;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-buttons button:hover {
+            background-color: #FF6C37;
+        }
+
+        .filter-buttons button.active {
+            background-color: #FF6C37;
+        }
+
+        .project {
+            display: none;
+        }
+
+        .project.active {
+            display: block;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="projects" class="projects-container p-5">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="active" onclick="filterProjects('all')">All</button>
+            </div>
+            <hr class="divider">
+            <div class="row">
+                <!-- Project 1 -->
+                <div class="col-md-4 project responsive fade-in active">
+                    <div class="project-card position-relative">
+                        <a href="real estate/real.html">
+                            <img src="real.jpg" alt="Real Estate Website" class="img-fluid">
+                            <div class="overlay">Real Estate Website</div>
+                            <div class="project-content">
+                                <h5>Real Estate Website</h5>
+                                <p>I built a fully responsive real estate website using HTML, CSS, and JavaScript. The site adapts seamlessly across all devices, providing an intuitive and engaging user experience.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-4 project ecommerce fade-in active">
+                    <div class="project-card position-relative">
+                        <a href="ecommerce/ecommerce.html" target="_blank">
+                            <img src="baf.jpg" alt="E-commerce Website" class="img-fluid">
+                            <div class="overlay">E-commerce Website</div>
+                            <div class="project-content">
+                                <h5>E-commerce Website</h5>
+                                <p>I developed a fully responsive e-commerce website for Men Chic Store using HTML, CSS, PHP, and JavaScript.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-4 project portfolio fade-in active">
+                    <div class="project-card position-relative">
+                        <a href="pass.html" target="_blank">
+                            <img src="pass1.jpg" alt="Password Generator" class="img-fluid">
+                            <div class="overlay">Password Generator</div>
+                            <div class="project-content">
+                                <h5>Password Generator</h5>
+                                <p>I created a fully responsive password generator using HTML, CSS, and JavaScript, allowing users to generate secure, randomized passwords easily.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-md-4 project travel fade-in active">
+                    <div class="project-card position-relative">
+                        <a href="http://localhost/projects/travel%20site/site.php" target="_blank">
+                            <img src="travell.jpg" alt="Travel Site" class="img-fluid">
+                            <div class="overlay">Travel Site</div>
+                            <div class="project-content">
+                                <h5>Travel Adventure Website</h5>
+                                <p>I developed a fully responsive travel website called "Wanderlust" using HTML, CSS, PHP, and JavaScript, optimized for all devices.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-md-4 project ecommerce fade-in active">
+                    <div class="project-card position-relative">
+                        <a href="http://localhost/php-admin-panel/login.php" target="_blank">
+                            <img src="admin.jpg" alt="Admin Panel" class="img-fluid">
+                            <div class="overlay">Admin Panel</div>
+                            <div class="project-content">
+                                <h5>E-commerce Website Admin Panel</h5>
+                                <p>This comprehensive admin panel for Men Chic Store allows seamless management of products, orders, and user accounts.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 project ecommerce fade-in active">
+                    <div class="project-card position-relative">
+                        <a href="game/game.html" target="_blank">
+                            <img src="guess.jpg" alt="Admin Panel" class="img-fluid">
+                            <div class="overlay">Guess Game</div>
+                            <div class="project-content">
+                                <h5>Guess Game</h5>
+                                <p>This comprehensive admin panel for Men Chic Store allows seamless management of products, orders, and user accounts.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-buttons button');
+        const projects = document.querySelectorAll('.project');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.textContent.toLowerCase();
+                projects.forEach(project => {
+                    if (filter === 'all' || project.classList.contains(filter)) {
+                        project.classList.add('active');
+                    } else {
+                        project.classList.remove('active');
+                    }
+                });
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeIns = document.querySelectorAll('.fade-in');
+            fadeIns.forEach((fadeIn, index) => {
+                setTimeout(() => {
+                    fadeIn.classList.add('visible');
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+
+</html>

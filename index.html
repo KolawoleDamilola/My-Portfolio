@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Portfolio</title>
+  <!-- Bootstrap for responsive layout -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #24322e; /* Dark greenish background */
+      color: #f4d19b; /* Light beige/gold text */
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Navbar Customization */
+    .navbar {
+      background-color: transparent;
+    }
+    .navbar-brand {
+      color: #f4d19b;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .navbar-toggler {
+      border: none;
+    }
+    .navbar-toggler-icon {
+      color: #f4d19b;
+    }
+    .navbar-collapse {
+      justify-content: flex-end;
+    }
+    .nav-link {
+      color: #f4d19b;
+    }
+    .nav-link:hover {
+      color: #e74c3c; /* Red hover color */
+    }
+
+    /* Profile Section */
+    .profile-section {
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    /* Profile Image Styling */
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Name styling */
+    .name {
+      font-size: 3rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    /* Subtitle styling */
+    .subtitle {
+      font-size: 1.8rem;
+      color: #e74c3c; /* Muted red for subtitle */
+      margin-top: -10px;
+      margin-bottom: 30px;
+    }
+
+    /* Social media icons styling */
+    .social-icons {
+    display: flex;
+    justify-content: center; /* Aligns icons horizontally and centers them */
+    gap: 15px; /* Adds space between the icons */
+    margin-top: 100px; /* Adds some spacing from the elements above, adjust as needed */
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 44px; /* Adjust icon size */
+    color: whitesmoke; /* Icon color */
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Color on hover */
+}
+
+    .text-3{
+        font-size: 1.5rem;
+        bottom: 50px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .name {
+        font-size: 2.5rem;
+      }
+      .subtitle {
+        font-size: 1.5rem;
+      }
+      .profile-img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .name {
+        font-size: 2rem;
+      }
+      .subtitle {
+        font-size: 1.2rem;
+      }
+      .profile-img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Kolawole Damilola</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list navbar-toggler-icon"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="contact.html">Contact</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Section -->
+  <div class="profile-section">
+    <img src="myself.jpg" alt="Profile" class="profile-img">
+
+    <!-- Name -->
+    <h1 class="name">Kolawole Damilola</h1>
+
+    <!-- Subtitle -->
+    <div class="text-3">I'm a <span id="typing"></span></div> <!-- Typing effect -->
+</div>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+      <a href="https://github.com/kolawoledamilola"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/kolawole-damilola-549141247/"><i class="bi bi-linkedin"></i></a>
+      <a href="https://twitter.com/My_dammygirl"><i class="bi bi-twitter"></i></a>
+      <a href="https://www.instagram.com/__d.a.m.m.y/"><i class="bi bi-instagram"></i></a>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (Optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
